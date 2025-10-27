@@ -2,7 +2,6 @@
 
 > **⚠️ Important Note**: This repository contains a **non-working architectural design and folder structure** for an enterprise-grade dry-cleaning POS system. It serves as a blueprint and reference for building the actual application at enterprise scale or better.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
 [![NestJS](https://img.shields.io/badge/NestJS-11-red.svg)](https://nestjs.com/)
@@ -46,7 +45,7 @@ Turborepo is a high-performance build system for JavaScript and TypeScript monor
 
 ## 🗂️ Complete Folder Structure
 
-\`\`\`
+```
 magnoli/
 │
 ├── 📁 apps/                           # Application Packages
@@ -135,7 +134,7 @@ magnoli/
 ├── tsconfig.json                    # Root TypeScript config
 ├── package.json                     # Root workspace
 └── README.md                        # This file
-\`\`\`
+```
 
 ---
 
@@ -349,12 +348,6 @@ When implementing the real application:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 <div align="center">
 
 **Built with ❤️ for enterprise-scale software architecture**
@@ -362,7 +355,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 *This is a reference architecture for building scalable dry-cleaning POS systems*
 
 </div>
-
-#   m a i - a r c h i t e c t u r a l - d e s i g n - p l a n 
- 
- 
