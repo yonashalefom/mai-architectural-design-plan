@@ -1,0 +1,17 @@
+node_modules
+.next
+dist
+build
+.git
+.github
+coverage
+*.log
+.env
+.env.local
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+*.swp
+*.swo
+

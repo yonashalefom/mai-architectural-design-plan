@@ -1,0 +1,7 @@
+# Reusable action for Node setup
+name: Setup Node
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v3
+

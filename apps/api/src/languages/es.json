@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "login_success": "Inicio de sesión exitoso",
+    "login_failed": "Credenciales inválidas"
+  },
+  "order": {
+    "created": "Orden creada exitosamente",
+    "not_found": "Orden no encontrada"
+  }
+}
+

@@ -1,0 +1,204 @@
+Magnoli Monorepo - Complete File Structure
+==========================================
+
+/
+├── apps/
+│   ├── web/                           # Customer-facing Next.js app (port 3000)
+│   │   ├── src/
+│   │   │   ├── app/
+│   │   │   │   ├── layout.tsx         # Root layout with auth provider
+│   │   │   │   └── page.tsx           # Home page with order form
+│   │   │   └── middleware.ts          # Next.js middleware for auth
+│   │   ├── package.json
+│   │   ├── next.config.js
+│   │   ├── tsconfig.json
+│   │   └── .eslintrc.json
+│   │
+│   ├── admin/                         # Admin dashboard (port 3001)
+│   │   ├── src/
+│   │   │   └── app/
+│   │   │       ├── layout.tsx         # Admin layout with sidebar
+│   │   │       └── page.tsx           # Dashboard with KPIs
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── .eslintrc.json
+│   │
+│   ├── mobile-web/                    # Mobile-optimized app (port 3002)
+│   │   ├── src/
+│   │   │   └── app/
+│   │   │       ├── layout.tsx         # Mobile layout with bottom nav
+│   │   │       └── page.tsx           # Mobile dashboard
+│   │   ├── package.json
+│   │   ├── tsconfig.json
+│   │   └── .eslintrc.json
+│   │
+│   └── api/                           # Main NestJS backend (port 3003)
+│       ├── src/
+│       │   ├── modules/               # Feature modules
+│       │   │   ├── auth/              # Authentication (JWT + OAuth2)
+│       │   │   │   ├── auth.module.ts
+│       │   │   │   ├── auth.controller.ts
+│       │   │   │   └── auth.service.ts
+│       │   │   ├── orders/            # Order CRUD and tracking
+│       │   │   │   ├── orders.module.ts
+│       │   │   │   ├── orders.controller.ts
+│       │   │   │   └── orders.service.ts
+│       │   │   ├── customers/         # Customer management
+│       │   │   │   ├── customers.module.ts
+│       │   │   │   ├── customers.controller.ts
+│       │   │   │   └── customers.service.ts
+│       │   │   ├── items/             # Garment/service catalog
+│       │   │   │   ├── items.module.ts
+│       │   │   │   ├── items.controller.ts
+│       │   │   │   └── items.service.ts
+│       │   │   ├── production/        # Production workflow tracking
+│       │   │   │   ├── production.module.ts
+│       │   │   │   ├── production.controller.ts
+│       │   │   │   └── production.service.ts
+│       │   │   ├── employees/         # Employee performance tracking
+│       │   │   │   ├── employees.module.ts
+│       │   │   │   ├── employees.controller.ts
+│       │   │   │   └── employees.service.ts
+│       │   │   ├── payments/          # Stripe payment processing
+│       │   │   │   ├── payments.module.ts
+│       │   │   │   ├── payments.controller.ts
+│       │   │   │   └── payments.service.ts
+│       │   │   ├── notifications/     # WebSocket notifications
+│       │   │   │   ├── notifications.module.ts
+│       │   │   │   ├── notifications.gateway.ts
+│       │   │   │   └── notifications.service.ts
+│       │   │   ├── analytics/         # Business analytics
+│       │   │   │   ├── analytics.module.ts
+│       │   │   │   ├── analytics.controller.ts
+│       │   │   │   └── analytics.service.ts
+│       │   │   └── queue/             # Background job processors
+│       │   │       ├── queue.module.ts
+│       │   │       └── queue.service.ts
+│       │   ├── common/               # Shared utilities
+│       │   │   ├── guards/
+│       │   │   │   └── jwt-auth.guard.ts
+│       │   │   ├── decorators/
+│       │   │   │   └── current-user.decorator.ts
+│       │   │   └── middleware/
+│       │   │       └── logger.middleware.ts
+│       │   ├── app.module.ts          # Root NestJS module
+│       │   ├── app.controller.ts      # Health check endpoint
+│       │   ├── app.service.ts
+│       │   └── main.ts                # Application entry point
+│       ├── package.json
+│       ├── nest-cli.json
+│       ├── tsconfig.json
+│       └── .eslintrc.js
+│
+├── packages/                           # Shared packages
+│   ├── ui/                            # React component library
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   │   ├── Button.tsx
+│   │   │   │   ├── OrderForm.tsx
+│   │   │   │   ├── Dashboard.tsx
+│   │   │   │   ├── MobileLayout.tsx
+│   │   │   │   ├── AdminLayout.tsx
+│   │   │   │   └── MobileDashboard.tsx
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── database/                      # Prisma schema and client
+│   │   ├── src/
+│   │   │   └── index.ts               # Prisma client export
+│   │   ├── migrations/.gitkeep        # Prisma migrations
+│   │   ├── schema.prisma              # Database schema
+│   │   └── package.json
+│   │
+│   ├── shared/                        # Shared types and utilities
+│   │   ├── src/
+│   │   │   ├── types.ts               # TypeScript interfaces
+│   │   │   ├── utils.ts               # Utility functions
+│   │   │   ├── constants.ts           # Shared constants
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── auth/                          # Authentication utilities
+│   │   ├── src/
+│   │   │   ├── jwt.ts                 # JWT token handling
+│   │   │   ├── client.tsx             # React auth context
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── queue/                         # BullMQ job queues
+│   │   ├── src/
+│   │   │   ├── queues/
+│   │   │   │   ├── email.ts           # Email queue
+│   │   │   │   ├── report.ts          # Report generation queue
+│   │   │   │   └── order.ts           # Order processing queue
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── websocket/                     # WebSocket utilities
+│   │   ├── src/
+│   │   │   ├── server/
+│   │   │   │   └── gateway.ts         # NestJS WebSocket gateway
+│   │   │   ├── client/
+│   │   │   │   └── hooks.ts           # React WebSocket hooks
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── stripe/                        # Stripe integration
+│   │   ├── src/
+│   │   │   ├── client.ts              # Stripe client
+│   │   │   ├── payments.ts            # Payment intents
+│   │   │   ├── webhooks.ts            # Webhook handlers
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   ├── email/                         # Email templates and sending
+│   │   ├── src/
+│   │   │   ├── templates/
+│   │   │   │   ├── order.tsx          # Order confirmation template
+│   │   │   │   └── status.tsx         # Status update template
+│   │   │   ├── sender.ts              # Email sender utility
+│   │   │   └── index.ts
+│   │   └── package.json
+│   │
+│   └── config/                     # Shared configuration
+│       ├── src/
+│       │   ├── env.ts                # Environment config loader
+│       │   └── index.ts
+│       └── package.json
+│
+├── infrastructure/                     # Deployment configuration
+│   ├── docker/
+│   │   ├── Dockerfile.api            # API Docker image
+│   │   └── Dockerfile.web            # Next.js Docker image
+│   ├── docker-compose.yml            # Local dev environment
+│   └── aws/
+│       ├── ecs-task-definition.json  # ECS task definition
+│       ├── cloudformation.yml       # CloudFormation template
+│       └── README.md                 # AWS deployment guide
+│
+├── tooling/                           # Development tooling
+│   ├── eslint-config/
+│   │   ├── index.js                  # Shared ESLint config
+│   │   └── package.json
+│   ├── tsconfig/
+│   │   ├── base.json                 # Base TypeScript config
+│   │   └── package.json
+│   └── prettier-config/
+│       ├── index.js                  # Shared Prettier config
+│       └── package.json
+│
+├── .vscode/                           # VS Code workspace settings
+│   ├── settings.json                  # Editor settings
+│   └── extensions.json                # Recommended extensions
+│
+├── turbo.json                         # Turborepo configuration
+├── tsconfig.json                      # Root TypeScript config
+├── package.json                       # Root workspace package.json
+├── .gitignore                         # Git ignore rules
+├── README.md                          # Project documentation
+├── ARCHITECTURE.md                    # Architecture overview
+└── STRUCTURE.txt                      # This file
+
+Total: 80+ files organized in enterprise-grade structure
+Key: All files contain max 10 lines of pseudocode with comments
+

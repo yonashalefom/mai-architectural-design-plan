@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: Web App",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev --filter=@magnoli/web",
+      "cwd": "${workspaceFolder}",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "Next.js: Admin App",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev --filter=@magnoli/admin",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "NestJS: API",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/api/dist/main.js",
+      "cwd": "${workspaceFolder}/apps/api",
+      "preLaunchTask": "Build: API"
+    }
+  ]
+}
+

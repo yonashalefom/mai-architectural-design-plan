@@ -1,0 +1,15 @@
+{
+  "family": "magnoli-api",
+  "containerDefinitions": [
+    {
+      "name": "magnoli-api",
+      "image": "ECR_REPOSITORY/magnoli-api:latest",
+      "portMappings": [{ "containerPort": 3000 }],
+      "environment": [
+        { "name": "DATABASE_URL", "value": "RDS_CONNECTION_STRING" },
+        { "name": "REDIS_HOST", "value": "ELASTICACHE_ENDPOINT" }
+      ]
+    }
+  ]
+}
+

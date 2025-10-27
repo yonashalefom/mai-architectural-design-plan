@@ -1,0 +1,22 @@
+# AWS CloudFormation template for Magnoli infrastructure
+Resources:
+  # RDS PostgreSQL instance
+  MagnoliRDS:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      Engine: postgres
+      DBInstanceClass: db.t3.medium
+
+  # ElastiCache Redis
+  MagnoliRedis:
+    Type: AWS::ElastiCache::ReplicationGroup
+    Properties:
+      Engine: redis
+      ReplicationGroupDescription: Magnoli cache and queue
+
+  # ECS Cluster
+  MagnoliCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: magnoli-cluster
+

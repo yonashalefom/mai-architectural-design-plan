@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "login_success": "Login successful",
+    "login_failed": "Invalid credentials"
+  },
+  "order": {
+    "created": "Order created successfully",
+    "not_found": "Order not found"
+  },
+  "errors": {
+    "not_found": "Resource not found",
+    "unauthorized": "Unauthorized access"
+  }
+}
+

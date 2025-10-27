@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output/
+*.log
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env*.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Turbo
+.turbo/
+.turbo-cache/
+
+# Husky
+.husky/_
+
+# Prisma
+prisma/migrations/*.sql
+!prisma/migrations/.gitkeep
+
+# Build artifacts
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
